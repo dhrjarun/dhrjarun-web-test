@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Vercel Deployment
+        run: curl -X POST ${{ secrets.VERCEL_DEPLOYMENT_TRIGGER_URL }}
