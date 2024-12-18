@@ -26,6 +26,7 @@ concurrency:
 
 env:
   BUILD_PATH: "./web" # default value when not using subfolders
+  CONTENT_PATH: "${{ github.workspace }}"
 
 jobs:
   build:
